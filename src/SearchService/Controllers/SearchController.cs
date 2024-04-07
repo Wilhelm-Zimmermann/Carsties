@@ -52,9 +52,9 @@ namespace SearchService.Controllers
 
             return Ok(new
             {
-                Results = result.Results,
-                PageCount = result.PageCount,
-                TotalCount = result.TotalCount
+                results = result.Results,
+                pageCount = result.PageCount,
+                totalCount = result.TotalCount
             });
         }
     }
