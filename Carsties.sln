@@ -5,23 +5,22 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BF2406AC-5F69-4067-99A3-307236EF960E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{EB9B4940-6319-4D86-AA52-B26FFE1D65D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{EB9B4940-6319-4D86-AA52-B26FFE1D65D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\Contracts\Contracts.csproj", "{4470103D-F750-4D63-8C20-332B19B7CD7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\Contracts.csproj", "{4470103D-F750-4D63-8C20-332B19B7CD7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{A268FCCB-5CE6-4BD4-BBF7-8855519BCD1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{A268FCCB-5CE6-4BD4-BBF7-8855519BCD1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{4B7BC342-A644-4533-AF43-F512BE4D146C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{4B7BC342-A644-4533-AF43-F512BE4D146C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchService", "src\SearchService\SearchService.csproj", "{A7E6CA3C-C4CF-402F-899E-9C403F27A759}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{A7E6CA3C-C4CF-402F-899E-9C403F27A759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingService", "src\BiddingService\BiddingService.csproj", "{30597D2D-1BE6-43CB-80FC-9F1B764885F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EB9B4940-6319-4D86-AA52-B26FFE1D65D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,6 +43,13 @@ Global
 		{A7E6CA3C-C4CF-402F-899E-9C403F27A759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E6CA3C-C4CF-402F-899E-9C403F27A759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E6CA3C-C4CF-402F-899E-9C403F27A759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30597D2D-1BE6-43CB-80FC-9F1B764885F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30597D2D-1BE6-43CB-80FC-9F1B764885F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30597D2D-1BE6-43CB-80FC-9F1B764885F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30597D2D-1BE6-43CB-80FC-9F1B764885F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EB9B4940-6319-4D86-AA52-B26FFE1D65D1} = {BF2406AC-5F69-4067-99A3-307236EF960E}
@@ -51,5 +57,9 @@ Global
 		{A268FCCB-5CE6-4BD4-BBF7-8855519BCD1C} = {BF2406AC-5F69-4067-99A3-307236EF960E}
 		{4B7BC342-A644-4533-AF43-F512BE4D146C} = {BF2406AC-5F69-4067-99A3-307236EF960E}
 		{A7E6CA3C-C4CF-402F-899E-9C403F27A759} = {BF2406AC-5F69-4067-99A3-307236EF960E}
+		{30597D2D-1BE6-43CB-80FC-9F1B764885F5} = {BF2406AC-5F69-4067-99A3-307236EF960E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFE0A15A-4F6D-4100-BD56-940D00FAA543}
 	EndGlobalSection
 EndGlobal
