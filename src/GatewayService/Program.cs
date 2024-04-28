@@ -16,16 +16,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("customPolicy", builder =>
+    options.AddPolicy("customPolicy", b =>
     {
-        builder.AllowAnyHeader()
+        b.AllowAnyHeader()
                .AllowAnyMethod()
-               .AllowAnyOrigin();
+               .AllowAnyOrigin()
+               .WithOrigins(builder.Configuration["ClientApp"]);
     });
 });
 
 var app = builder.Build();
-
+app.UseCors();
 app.MapReverseProxy();
 
 app.UseAuthentication();
