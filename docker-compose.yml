@@ -37,8 +37,13 @@ services:
       - RabbitMq__Host=rabbitmq
       - ConnectionStrings__DefaultConnection=Server=postgres:5432;User Id=postgres;Password=postgrespw;Database=auctions
       - IdentityServiceUrl=http://identity-svc
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
+      - Kestrel__Endpoints__Grpc__Url=http://+:7777
+      - Kestrel__Endpoints__WebApi__Protocols=Http1
+      - Kestrel__Endpoints__WebApi__Url=Http://+:80
     ports:
       - 7001:80
+      - 7777:7777
     depends_on:
       - postgres
       - rabbitmq
@@ -58,6 +63,38 @@ services:
       - 7002:80
     depends_on:
       - mongo
+      - rabbitmq
+
+  bid-svc:
+    image: wilhelmzimmermann/bid-svc:latest
+    build: 
+      context: .
+      dockerfile: src/BiddingService/DockerFile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMq__Host=rabbitmq
+      - ConnectionStrings__BidDbConnection=mongodb://root:mongopw@mongo
+      - GrpcAuction=http://auction-svc:7777
+      - IdentityServiceUrl=http://identity-svc
+    ports:
+      - 7003:80
+    depends_on:
+      - mongo
+      - rabbitmq
+
+  nt-svc:
+    image: wilhelmzimmermann/nt-svc:latest
+    build: 
+      context: .
+      dockerfile: src/NotificationService/DockerFile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMq__Host=rabbitmq
+    ports:
+      - 7004:80
+    depends_on:
       - rabbitmq
 
   identity-svc:
